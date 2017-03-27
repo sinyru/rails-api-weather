@@ -1,2 +1,2 @@
-## Link
-# [weather Entity Relational Diagram]('./Weather_ERD')
+# Link
+## [weather Entity Relational Diagram](http://imgur.com/a/xqk6j)
