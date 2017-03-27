@@ -13,6 +13,7 @@ gem 'rails', '~> 5.0.1'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+  gem 'figaro', '~> 1.1', '>= 1.1.1'
   gem 'pry', '~> 0.10'
   gem 'pry-byebug', '~> 3.3'
   gem 'rspec-rails', '~> 3.5'

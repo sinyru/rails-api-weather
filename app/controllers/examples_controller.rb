@@ -1,19 +1,26 @@
 # frozen_string_literal: true
+require 'net/http'
+
 class ExamplesController < OpenReadController
   before_action :set_example, only: [:update, :destroy]
 
   # GET /examples
   # GET /examples.json
   def index
-    @examples = Example.all
-
-    render json: @examples
+    api_key = ENV['API_KEY']
+    uri = URI("http://api.openweathermap.org/data/2.5/weather?q=,us&appid=#{api_key}")
+    @weather = Net::HTTP.get(uri)
+    render json: @weather
   end
 
   # GET /examples/1
   # GET /examples/1.json
   def show
-    render json: Example.find(params[:id])
+    location = params[:id]
+    api_key = ENV['API_KEY']
+    uri = URI("http://api.openweathermap.org/data/2.5/weather?q=#{location},us&appid=#{api_key}")
+    @weather = Net::HTTP.get(uri)
+    render json: @weather
   end
 
   # POST /examples
