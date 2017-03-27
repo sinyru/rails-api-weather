@@ -2,7 +2,7 @@
 require 'net/http'
 
 class WeathersController < ApplicationController
-  # GET /weathers/1
+  # GET /weathers/boston
   def show
     location = params[:id]
     if location.is_a? Integer
