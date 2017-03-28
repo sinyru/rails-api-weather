@@ -1,11 +1,12 @@
 # frozen_string_literal: true
-class ApparelsController < OpenReadController
+class ApparelsController < ProtectedController
   before_action :set_apparel, only: [:show, :update, :destroy]
 
   # GET /apparels
   def index
-    @apparels = Apparel.all
-
+    p current_user.id
+    @apparels = current_user.apparels
+    p @apparels.length
     render json: @apparels
   end
 

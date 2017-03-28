@@ -2,6 +2,13 @@
 require 'net/http'
 
 class WeathersController < ApplicationController
+
+  def index
+    api_key = ENV['API_KEY']
+    uri = URI("http://api.openweathermap.org/data/2.5/weather?zip=,us&appid=#{api_key}")
+    @weather = Net::HTTP.get(uri)
+    render json: @weather
+  end
   # GET /weathers/boston
   def show
     location = params[:id]
