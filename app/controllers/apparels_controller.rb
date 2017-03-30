@@ -4,9 +4,7 @@ class ApparelsController < ProtectedController
 
   # GET /apparels
   def index
-    p current_user.id
     @apparels = current_user.apparels
-    p @apparels.length
     render json: @apparels
   end
 
