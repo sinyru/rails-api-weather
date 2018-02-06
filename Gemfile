@@ -9,6 +9,8 @@ gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.0.1'
+gem 'rest-client'
+gem 'address_validator', github: 'robhurring/address-validator'
 
 group :development, :test do
   gem 'byebug', platform: :mri
